@@ -3,7 +3,7 @@ import { FaAlignLeft, FaUserCircle, FaCaretDown } from 'react-icons/fa';
 import Logo from './Logo';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toogleSidebar, logoutUser } from '../features/user/userSlice';
+import { toggleSidebar, logoutUser } from '../features/user/userSlice';
 
 
 const Navbar = () => {
@@ -12,7 +12,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   const toogle = () => {
-      dispatch(toogleSidebar())
+      dispatch(toggleSidebar())
   }
   return (
     <Wrapper>

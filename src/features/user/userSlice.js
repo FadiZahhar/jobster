@@ -41,6 +41,11 @@ const userSlice = createSlice({
     reducers: {
         toogleSidebar:(state) => {
             state.isSidebarOpen = !state.isSidebarOpen
+        },
+        logoutUser:() => {
+            state.user = null;
+            state.isSidebarOpen = false;
+            removeUserFromLocalStorage();
         }
     },
     extraReducers:{

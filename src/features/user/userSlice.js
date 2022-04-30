@@ -39,12 +39,15 @@ export const updateUser = createAsyncThunk(
     'user/updateUser',
     async (user, thunkAPI) => {
         try {
-            const resp = await customFetch.post('/auth/updateUser',user);
+            const resp = await customFetch.patch('/auth/updateUser', user,{
+                headers: {
+                    authorization: `Bearer ${thunkAPI.getState().user.user.token}`,
+                  },
+            });
             return resp.data;
-        }
-        catch(error){
+          } catch (error) {
             return thunkAPI.rejectWithValue(error.response.data.msg)
-        }
+          }
     }
   );
 //export const clearStore = createAsyncThunk('user/clearStore', clearStoreThunk);

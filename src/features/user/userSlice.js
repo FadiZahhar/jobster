@@ -42,7 +42,7 @@ const userSlice = createSlice({
         toogleSidebar:(state) => {
             state.isSidebarOpen = !state.isSidebarOpen
         },
-        logoutUser:() => {
+        logoutUser:(state) => {
             state.user = null;
             state.isSidebarOpen = false;
             removeUserFromLocalStorage();
@@ -79,5 +79,5 @@ const userSlice = createSlice({
     }
 })
 
-export const {toogleSidebar} = userSlice.actions;
+export const {toogleSidebar,  logoutUser} = userSlice.actions;
 export default userSlice.reducer;
